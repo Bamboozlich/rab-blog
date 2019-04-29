@@ -1,7 +1,5 @@
 <?php
 
-//TODO: СДЕЛАТЬ ФОРМУ ПО ЦЕНТРУ В РАМКЕ
-
 require "../includes/config.php";
 
 $data=$_POST;
@@ -64,30 +62,32 @@ if(isset($data['do_login']))
     <link rel="stylesheet" type="text/css" href="../media/css/adminp.css">
 
 </head>
-<body>
-<div class="login_form_admin_border">
+<body >
+<div class="center-form">
     <div class="login_form_admin">
-        <form action="../pages/adminlogin.php" method="POST">
+        <div class="login_form_admin_border">
+            <form action="../pages/adminlogin.php" method="POST">
 
-            <p>
-            <p><strong>Ваш логин</strong></p>
-            <input type="text" name="login" autocomplete="off" value="<?php echo @$data['login']; ?>">
-            </p>
+                <div>
+                <strong>Ваш логин</strong>
+                <input type="text" name="login" autocomplete="off" value="<?php echo @$data['login']; ?>">
+                </div>
 
-            <br>
+                <br>
 
-            <p>
-            <p><strong>Ваш пароль</strong></p>
-            <input type="password" name="password" value="<?php echo @$data['password']; ?>">
-            </p>
+                <div>
+                <strong>Ваш пароль</strong>
+                <input type="password" name="password" value="<?php echo @$data['password']; ?>">
+                </div>
 
-            <br>
+                <br>
 
-            <p>
-                <button type="submit" name="do_login" >Авторизироваться</button>
-            </p>
+                <div class="login_form_admin_button">
+                    <button type="submit" name="do_login">Авторизироваться</button>
+                </div>
 
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 </body>

@@ -16,5 +16,24 @@
 }
 
 .login_form_admin{
+    padding: 18%;
+}
 
+.login_form_admin strong{
+    font-weight: bold;
+}
+
+.login_form_admin button{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login_form_admin_button{
+    text-align: center;
+}
+
+.center-form{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
 }
