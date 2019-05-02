@@ -193,6 +193,7 @@ require "../includes/head.php";
                                         ?>
 
                                         <?php
+
                                         while ($comment = mysqli_fetch_assoc($comments)) {
                                             ?>
                                             <article class="article">
@@ -200,6 +201,9 @@ require "../includes/head.php";
                                                      style="background-image: url(https://www.gravatar.com/avatar/<?php echo md5($comment['email']); ?>s=125)"></div>
                                                 <div class="article__info">
                                                     <a href="/pages/article.php?id=<?php echo $comment['articles_id']; ?>"><?php echo $comment['nickname']; ?></a>
+                                                    <div class="comment_time_ago">
+                                                        <?php echo 'published ' . humanTiming(strtotime($comment['pubdate'])) . ' ago '; ?>
+                                                    </div>
                                                     <div class="article__info__meta">
 
                                                     </div>
@@ -229,10 +233,10 @@ require "../includes/head.php";
                                         <div class="form__group">
                                             <div class="row">
                                                 <div class="col-md-4">
-                                                    <input type="text" minlength="5"  autocomplete="off" class="form__control" required name="name" placeholder="Имя" value="<?php echo $data['name'];?>">
+                                                    <input type="text" minlength="5" maxlength="25"  autocomplete="off" class="form__control" required name="name" placeholder="Имя" value="<?php echo $data['name'];?>">
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <input type="text" minlength="5" autocomplete="off" class="form__control" required name="nickname" placeholder="Никнейм" value="<?php echo $data['nickname'];?>">
+                                                    <input type="text" minlength="5" maxlength="25" autocomplete="off" class="form__control" required name="nickname" placeholder="Никнейм" value="<?php echo $data['nickname'];?>">
                                                 </div>
                                                 <div class="col-md-4">
                                                     <input type="email" autocomplete="off" class="form__control" required name="email" placeholder="Почта" value="<?php echo $data['email'];?>">

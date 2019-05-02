@@ -21,6 +21,7 @@
 
     <!-- Custom -->
     <script src="../static/scripts/main.js" type="text/javascript"></script>
+    <?php include '../static/scripts/main.php'; ?>
 
     <!-- reCAPTCHA -->
     <script src='https://www.google.com/recaptcha/api.js'></script>

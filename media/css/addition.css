@@ -67,7 +67,12 @@ link_vk img{
     font-weight: bold !important;
 }
 
-
+.comment_time_ago{
+    position:absolute;
+    right: 0;
+    top: 0;
+    opacity: 0.5;
+}
 
 
 

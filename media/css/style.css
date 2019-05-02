@@ -160,7 +160,8 @@ body {
 
 .articles .article .article__info {
   margin-left: 125px;
-  padding-left: 21px; }
+  padding-left: 21px;
+  position: relative}
   .articles .article .article__info > a {
     color: black;
     font-size: 18px;
