@@ -8,6 +8,7 @@ require_once "../static/libs/recaptchalib.php";
 <?php
 
 require "../includes/head.php";
+include '../static/scripts/main.php';
 
 ?>
 
@@ -202,7 +203,7 @@ require "../includes/head.php";
                                                 <div class="article__info">
                                                     <a href="/pages/article.php?id=<?php echo $comment['articles_id']; ?>"><?php echo $comment['nickname']; ?></a>
                                                     <div class="comment_time_ago">
-                                                        <?php echo 'published ' . humanTiming(strtotime($comment['pubdate'])) . ' ago '; ?>
+                                                        <?php echo 'опубликовано ' . showDate(strtotime($comment['pubdate'])) . ''; ?>
                                                     </div>
                                                     <div class="article__info__meta">
 
