@@ -77,7 +77,8 @@ body {
   #header .header__top {
     padding: 37px 0; }
     #header .header__top .header__top__logo {
-      float: left; }
+      float: left;
+      margin: 10px 0 0 0; }
     #header .header__top .header__top__menu {
       padding-top: 15px;
       text-align: right; }
