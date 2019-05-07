@@ -195,6 +195,6 @@ require "../../includes/config.php";
     ?>
 
 <?php else : ?>
-    <a href="../../pages/adminlogin.php">Авторизуйтесь</a>
+    <a href="../../pages/adminp/adminka.php">Авторизуйтесь</a>
     <br>
 <?php endif; ?>

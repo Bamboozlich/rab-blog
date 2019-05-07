@@ -74,6 +74,39 @@ link_vk img{
     opacity: 0.5;
 }
 
+.comment_time_ago_logadmin{
+    position:absolute;
+    right: 5%;
+    top: 0;
+    opacity: 0.5;
+}
+
+.comment_delete button {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: #3a3a3a;
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+}
+.comment_delete button:hover{background: #18181A;}
+.comment_delete button:before {
+    content: "\f057";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #F9F0DA;
+}
+
+
+
+
+
+
+
+
 
 
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');

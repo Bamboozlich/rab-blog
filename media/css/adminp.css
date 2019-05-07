@@ -37,3 +37,19 @@
     justify-content: center ;
     align-items: center;
 }
+
+.adminka_menu {
+    margin: 10px;
+}
+.adminka_menu a {
+    color: black;
+    font-size: 18px;
+    font-weight: normal;
+    text-decoration: none;
+    background: #EBEBEB;
+}
+.adminka_menu a:hover {
+    border-bottom: 2px solid #333; }
+.adminka_menu li {
+    margin: 7px;
+}

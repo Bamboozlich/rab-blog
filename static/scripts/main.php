@@ -38,4 +38,9 @@ function dimension($time, $type) { // Определяем склонение е
 
 }
 
+function deleteComment($connection,$id) {
+    mysqli_query($connection, "DELETE FROM comments WHERE id='".$id."'");
+}
+
+
 ?>

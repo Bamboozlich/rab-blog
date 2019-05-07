@@ -131,14 +131,6 @@ include '../static/scripts/main.php';
 
                                     if ($captcha == true) {
 
-                                        //автообновление комментов -> вынести обработку выше
-                                        //sql инъекции
-                                        //$city = $mysqli->real_escape_string($_POST['name']);
-
-                                        //проблемы с сообщением рекапчи
-                                        //добавить редактирование страницы "Обо мне" (картинка+текст)
-                                        //добавить изменение пароля у админа
-
                                         $t_name=trim($_POST['name']);
                                         $t_nickname=trim($_POST['nickname']);
                                         $t_email=trim($_POST['email']);
@@ -193,6 +185,8 @@ include '../static/scripts/main.php';
 
                                         ?>
 
+
+
                                         <?php
 
                                         while ($comment = mysqli_fetch_assoc($comments)) {
@@ -202,9 +196,30 @@ include '../static/scripts/main.php';
                                                      style="background-image: url(https://www.gravatar.com/avatar/<?php echo md5($comment['email']); ?>s=125)"></div>
                                                 <div class="article__info">
                                                     <a href="/pages/article.php?id=<?php echo $comment['articles_id']; ?>"><?php echo $comment['nickname']; ?></a>
-                                                    <div class="comment_time_ago">
-                                                        <?php echo 'опубликовано ' . showDate(strtotime($comment['pubdate'])) . ''; ?>
-                                                    </div>
+                                                    <?php if(isset($_SESSION['logged_admin'])) : ?>
+                                                        <div class="comment_time_ago_logadmin">
+                                                            <?php echo 'опубликовано ' . showDate(strtotime($comment['pubdate'])) . ''; ?>
+                                                        </div>
+                                                        <div class="comment_delete">
+                                                            <?php
+                                                            $id_comment=$comment['id'];
+                                                            if (isset($data['delete_comment_'.$id_comment.''])) {
+                                                                deleteComment($connection, $id_comment);
+                                                                ?>
+                                                                <meta http-equiv="refresh"
+                                                                      content="0; URL=../pages/article.php?id=<?php echo $art['id'];?>">
+                                                                <?php
+                                                            }
+                                                            ?>
+                                                            <form id="delCom" action="../pages/article.php?id=<?php echo $art['id'];?>#pubdate" method="POST">
+                                                                <button type="submit" name="delete_comment_<?php echo $comment['id']?>"></button>
+                                                            </form>
+                                                        </div>
+                                                    <?php else : ?>
+                                                        <div class="comment_time_ago">
+                                                            <?php echo 'опубликовано ' . showDate(strtotime($comment['pubdate'])) . ''; ?>
+                                                        </div>
+                                                    <?php endif; ?>
                                                     <div class="article__info__meta">
 
                                                     </div>
@@ -225,7 +240,7 @@ include '../static/scripts/main.php';
                             <div class="block" id="comment-add-form">
                                 <h3>Добавить комментарий</h3>
                                 <div class="block__content">
-                                    <form class="form" method="POST" action="../pages/article.php?id=<?php echo $art['id'];?>#pubdate">
+                                    <form id="new_comment_form" class="form" method="POST" action="../pages/article.php?id=<?php echo $art['id'];?>#pubdate">
 
                                         <div id="op_result"> </div>
 
