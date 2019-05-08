@@ -8,7 +8,7 @@ require "../includes/config.php";
 
 require "../includes/head.php";
 
-require '../vendor/autoload.php';
+require '../vendor/autoload.php'; /*composer install*/
 use JasonGrimes\Paginator;
 
 ?>

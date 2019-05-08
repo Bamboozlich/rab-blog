@@ -72,7 +72,7 @@ include '../static/scripts/main.php';
                                         <?php echo $art['text'];?>
                                     </div>
                                     <div id="pubdate" class="pub_date pubdate_opacity">
-                                        <a>Публикация от <?php echo $art['pubdate'];?></a>
+                                        <?php echo 'Публикация от ' . $art['pubdate'] . ''; ?>
                                     </div>
 
                                 </div>
