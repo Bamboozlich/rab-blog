@@ -98,9 +98,21 @@ link_vk img{
     color: #F9F0DA;
 }
 
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color: #464648 ; /*background color of buttons. Blue by default*/
+    border-color: #3A3A3A; /* color or borders. Also blue by default*/
+    color: white; /*text color of buttons which is white by default*/
 
-
-
+    cursor:pointer;
+    z-index:2;
+}
+.pagination>li>a, .pagination>li>span{
+    color: #18181A;
+}
+.pagination > li > a:hover, .pagination > li > a:focus {
+    /*background-color: #468847;*/
+    color: #18181A;
+}
 
 
 

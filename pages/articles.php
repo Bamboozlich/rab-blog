@@ -8,6 +8,9 @@ require "../includes/config.php";
 
 require "../includes/head.php";
 
+require '../vendor/autoload.php';
+use JasonGrimes\Paginator;
+
 ?>
 
 <body>
@@ -154,7 +157,8 @@ require "../includes/head.php";
                             <?php
 
                             if ($articles_exist&&!$cat_exist) {
-                                echo '<div class="paginator">';
+
+                                /*echo '<div class="paginator">';
                                 if ($page > 1) {
 
                                     echo '<a href="../pages/articles.php?page=' . ($page - 1) . '">&laquo;Предыдущая страница ('.($page-1).') </a> &nbsp &nbsp';
@@ -162,18 +166,37 @@ require "../includes/head.php";
                                 if ($page < $total_pages) {
                                     echo '<a href="../pages/articles.php?page=' . ($page + 1) . '">Следующая страница ('.($page+1).')&raquo;</a>';
                                 }
-                                echo '</div>';
+                                echo '</div>';*/
+
+                                $totalItems = $total_count;
+                                $itemsPerPage = $per_page;
+                                $currentPage = $page;
+                                $urlPattern = '../pages/articles.php?page=(:num)';
+
+                                $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
+
+                                echo $paginator;
                             }
                             else if ($articles_exist)
                             {
-                                echo '<div class="paginator">';
+
+                                /*echo '<div class="paginator">';
                                 if ($page > 1) {
                                     echo '<a href="../pages/articles.php?category='.$category.'&page=' . ($page - 1) . '">&laquo;Предыдущая страница ('.($page-1).') </a> &nbsp &nbsp';
                                 }
                                 if ($page < $total_pages) {
                                     echo '<a href="../pages/articles.php?category='.$category.'&page=' . ($page + 1) . '">Следующая страница ('.($page+1).')&raquo;</a>';
                                 }
-                                echo '</div>';
+                                echo '</div>';*/
+
+                                $totalItems = $total_count;
+                                $itemsPerPage = $per_page;
+                                $currentPage = $page;
+                                $urlPattern = '../pages/articles.php?category='.$category.'&page=(:num)';
+
+                                $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
+
+                                echo $paginator;
                             }
                             ?>
                         </div>
