@@ -249,10 +249,10 @@ include '../static/scripts/main.php';
                                         <div class="form__group">
                                             <div class="row">
                                                 <div class="col-md-4">
-                                                    <input type="text" minlength="5" maxlength="25"  autocomplete="off" class="form__control" required name="name" placeholder="Имя" value="<?php echo $data['name'];?>">
+                                                    <input type="text" minlength="4" maxlength="25"  autocomplete="off" class="form__control" required name="name" placeholder="Имя" value="<?php echo $data['name'];?>">
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <input type="text" minlength="5" maxlength="25" autocomplete="off" class="form__control" required name="nickname" placeholder="Никнейм" value="<?php echo $data['nickname'];?>">
+                                                    <input type="text" minlength="4" maxlength="25" autocomplete="off" class="form__control" required name="nickname" placeholder="Никнейм" value="<?php echo $data['nickname'];?>">
                                                 </div>
                                                 <div class="col-md-4">
                                                     <input type="email" autocomplete="off" class="form__control" required name="email" placeholder="Почта" value="<?php echo $data['email'];?>">
