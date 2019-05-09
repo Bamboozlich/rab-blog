@@ -260,7 +260,7 @@ include '../static/scripts/main.php';
                                             </div>
                                         </div>
                                         <div class="form__group">
-                                            <textarea minlength="10"  class="area_comment_spec" name="text" autocomplete="off" required class="form__control"  placeholder="Текст комментария ..."><?php echo $data['text'];?></textarea>
+                                            <textarea minlength="10"  class="form__control area_comment_spec" name="text" autocomplete="off" required placeholder="Текст комментария ..."><?php echo $data['text'];?></textarea>
                                         </div>
                                         <div class="g-recaptcha captcha_spec" data-sitekey="6LeikpkUAAAAAHtvE-ecvAEF_ZEYDQwS8EWmXgcP"  data-theme="dark"></div>
                                         <div class="form__group">
