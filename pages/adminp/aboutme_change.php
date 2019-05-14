@@ -32,9 +32,9 @@ require "../../includes/config.php";
 <?php
 $login=$_SESSION['logged_admin']['login'];
 
-$article=mysqli_query($connection,"SELECT slogan,image,text FROM admins  WHERE login='$login'");
+$admin=mysqli_query($connection,"SELECT slogan,image,text FROM admins  WHERE login='$login'");
 
-$art = mysqli_fetch_assoc($article);
+$adm = mysqli_fetch_assoc($admin);
 
 ?>
 
@@ -111,7 +111,7 @@ $art = mysqli_fetch_assoc($article);
             <div class="row">
                 <div class="col-md-6">
                     <input type="text" autocomplete="off" class="form__control" required name="title"
-                           placeholder="Ваш девиз" value="<?php echo $art['slogan'] ?>">
+                           placeholder="Ваш девиз" value="<?php echo $adm['slogan'] ?>">
                 </div>
             </div>
         </div>
@@ -120,14 +120,14 @@ $art = mysqli_fetch_assoc($article);
             <div class="row">
                 <div class="col-md-6">
                     <input type="text" autocomplete="off" class="form__control" required name="image"
-                           placeholder="Название изображения c расширением из папки static/images" value="<?php echo $art['image'] ?>">
+                           placeholder="Название изображения c расширением из папки static/images" value="<?php echo $adm['image'] ?>">
                 </div>
             </div>
         </div>
 
         <div class="form__group">
         <textarea name="text" autocomplete="off" required class="form__control area_spec_admin"
-                  placeholder="Напишите людям о себе..."><?php echo $art['text'] ?></textarea>
+                  placeholder="Напишите людям о себе..."><?php echo $adm['text'] ?></textarea>
         </div>
         <div class="form__group">
             <input type="submit" class="form__control" name="do_post" value="Изменить информацию">

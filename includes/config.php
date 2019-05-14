@@ -17,3 +17,19 @@ session_start();
 
 
 ?>
+
+<?php
+
+//плохо
+$admin=mysqli_query($connection,"SELECT blog_name FROM admins  WHERE login='admin'");
+
+$adm = mysqli_fetch_assoc($admin);
+
+$new_title = array(
+    'title' => $adm['blog_name'],
+);
+
+$config = array_merge($config, $new_title);
+
+?>
+

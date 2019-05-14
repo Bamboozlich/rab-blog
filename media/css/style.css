@@ -163,12 +163,12 @@ body {
   margin-left: 125px;
   padding-left: 21px;
   position: relative}
-  .articles .article .article__info > a {
+  .articles .article .article__info > h3 > a {
     color: black;
     font-size: 18px;
     font-weight: normal;
     text-decoration: none; }
-    .articles .article .article__info > a:hover {
+    .articles .article .article__info > h3 > a:hover {
       border-bottom: 2px solid #333; }
   .articles .article .article__info > .article__info__meta {
     font-size: 14px;

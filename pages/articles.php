@@ -124,7 +124,7 @@ use JasonGrimes\Paginator;
                                         <div class="article__image"
                                              style="background-image: url(../static/images/<?php echo $art['image']; ?>);"></div>
                                         <div class="article__info">
-                                            <a href="../pages/article.php?id=<?php echo $art['id']; ?>"><?php echo $art['title'];?></a>
+                                            <h3><a href="../pages/article.php?id=<?php echo $art['id']; ?>"><?php echo $art['title'];?></a></h3>
                                             <div class="article__info__meta">
                                                 <?php
                                                 $art_cat=false;

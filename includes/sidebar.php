@@ -32,7 +32,7 @@
 <div class="block">
     <h3>Мы_знаем</h3>
     <div class="block__content">
-        <script type="text/javascript" src="//ra.revolvermaps.com/0/0/6.js?i=02op3nb0crr&amp;m=7&amp;s=320&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+        <script  src="//ra.revolvermaps.com/0/0/6.js?i=02op3nb0crr&amp;m=7&amp;s=320&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
     </div>
 </div>
 
@@ -52,7 +52,7 @@
                     <div class="article__image"
                          style="background-image: url(../static/images/<?php echo $art['image']; ?>);"></div>
                     <div class="article__info">
-                        <a href="../pages/article.php?id=<?php echo $art['id']; ?>"><?php echo $art['title'];?></a>
+                        <h3><a href="../pages/article.php?id=<?php echo $art['id']; ?>"><?php echo $art['title'];?></a></h3>
                         <div class="article__info__meta">
                             <?php
                             $art_cat=false;
@@ -97,7 +97,7 @@
                     <div class="article__image"
                          style="background-image: url(https://www.gravatar.com/avatar/<?php echo md5($comment['email']);?>s=125)"></div>
                     <div class="article__info">
-                        <a href="../pages/article.php?id=<?php echo $comment['articles_id']; ?>"><?php echo $comment['nickname'];?></a>
+                        <h3><a href="../pages/article.php?id=<?php echo $comment['articles_id']; ?>"><?php echo $comment['nickname'];?></a></h3>
                         <div class="article__info__meta">
 
 

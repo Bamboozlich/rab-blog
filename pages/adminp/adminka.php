@@ -36,6 +36,7 @@ require "../../includes/config.php";
         <ul>
             <li><a href="pass_change.php">Смена пароля</a></li>
             <li><a href="aboutme_change.php">Изменение личной информации</a></li>
+            <li><a href="blogname_change.php">Изменение названия блога</a></li>
         </ul>
     <hr width="50%" align="left">
     <h2>Управление категориями</h2>

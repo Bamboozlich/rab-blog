@@ -67,7 +67,7 @@ include '../static/scripts/main.php';
                                 <a><?php echo $art['views'];?> просмотров</a>
                                 <h3><?php echo $art['title'];?></h3>
                                 <div class="block__content">
-                                    <img class="image_large" src="../static/images/<?php echo $art['image'] ?>">
+                                    <img class="image_large" src="../static/images/<?php echo $art['image'] ?>" alt="Изображение статьи">
                                     <div class="full-text text_simple_article">
                                         <?php echo $art['text'];?>
                                     </div>
@@ -195,7 +195,7 @@ include '../static/scripts/main.php';
                                                 <div class="article__image"
                                                      style="background-image: url(https://www.gravatar.com/avatar/<?php echo md5($comment['email']); ?>s=125)"></div>
                                                 <div class="article__info">
-                                                    <a href="/pages/article.php?id=<?php echo $comment['articles_id']; ?>"><?php echo $comment['nickname']; ?></a>
+                                                    <h3><a href="/pages/article.php?id=<?php echo $comment['articles_id']; ?>"><?php echo $comment['nickname']; ?></a></h3>
                                                     <?php if(isset($_SESSION['logged_admin'])) : ?>
                                                         <div class="comment_time_ago_logadmin">
                                                             <?php echo 'опубликовано ' . showDate(strtotime($comment['pubdate'])) . ''; ?>

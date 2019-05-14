@@ -82,7 +82,7 @@
 
 </header>
 
-<script type="text/javascript">/*
+<script>/*
     $(document).ready(function() {
         $().UItoTop({ easingType: 'easeOutQuart' });
 

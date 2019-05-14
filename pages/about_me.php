@@ -30,7 +30,7 @@ $art = mysqli_fetch_assoc($article);
                     <div class="block">
                         <h3>Обо мне</h3>
                         <div class="block__content">
-                            <img class="image_large" src="../static/images/<?php echo $art['image'] ?>">
+                            <img class="image_large" src="../static/images/<?php echo $art['image'] ?>" alt="Обо мне">
 
                             <div class="full-text" align="justify">
                                 <h1><?php echo $art['slogan'] ?></h1>
