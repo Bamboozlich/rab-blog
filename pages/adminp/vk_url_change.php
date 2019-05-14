@@ -33,7 +33,7 @@ require "../../includes/config.php";
 
 $login=$_SESSION['logged_admin']['login'];
 
-$admin=mysqli_query($connection,"SELECT blog_name FROM admins  WHERE login='$login'");
+$admin=mysqli_query($connection,"SELECT vk_url FROM admins  WHERE login='$login'");
 
 $adm = mysqli_fetch_assoc($admin);
 
@@ -44,7 +44,7 @@ $adm = mysqli_fetch_assoc($admin);
 
     <a href="adminka.php">&laquo;Назад</a>
     <h1>Удаление категории</h1>
-    <form class="form form_adminka" method="POST" action="blogname_change.php">
+    <form class="form form_adminka" method="POST" action="vk_url_change.php">
         <?php
 
         $data=$_POST;
@@ -55,8 +55,8 @@ $adm = mysqli_fetch_assoc($admin);
             $errors = array();
 
 
-            if ($data['blog_name'] == '') {
-                $errors[] = 'Укажите новое название блога!';
+            if ($data['vk_url'] == '') {
+                $errors[] = 'Укажите новую ссылку ВКонтакте!';
             }
 
 
@@ -67,16 +67,16 @@ $adm = mysqli_fetch_assoc($admin);
             if (empty($errors)) {
 
 
-                $t_blog_name=trim($data['blog_name']);
+                $t_vk_url=trim($data['vk_url']);
 
 
-                mysqli_query($connection, "UPDATE admins SET blog_name='$t_blog_name' WHERE login='$login'");
+                mysqli_query($connection, "UPDATE admins SET vk_url='$t_vk_url' WHERE login='$login'");
 
 
 
 
                 echo '<span style="color: green; font-weight: bold;
-                                                            margin-bottom: 10px; display: block;">Новое название вашего блога - "'.$data['blog_name'].'"</span>';
+                                                            margin-bottom: 10px; display: block;">Ваша новая ссылка ВКонтакте - "'.$data['vk_url'].'"</span>';
 
                 ?>
                 <meta http-equiv="refresh" content="1">
@@ -95,14 +95,14 @@ $adm = mysqli_fetch_assoc($admin);
         <div class="form__group">
             <div class="row">
                 <div class="col-md-6">
-                    <input type="text" autocomplete="off" class="form__control" required name="blog_name"
-                           placeholder="Название блога" value="<?php echo $adm['blog_name']; ?>">
+                    <input type="text" autocomplete="off" class="form__control" required name="vk_url"
+                           placeholder="Ссылка ВКонтакте" value="<?php echo $adm['vk_url']; ?>">
                 </div>
             </div>
         </div>
 
         <div class="form__group">
-            <input type="submit" class="form__control" name="do_post" value="Изменить название">
+            <input type="submit" class="form__control" name="do_post" value="Изменить ссылку">
         </div>
     </form>
 
