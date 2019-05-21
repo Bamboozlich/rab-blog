@@ -10,6 +10,14 @@ require "../includes/head.php";
 
 ?>
 
+<?php
+
+$post_query=$_POST['query'];
+if (!empty($post_query)) $query = trim($post_query);
+
+?>
+
+
 <body>
 
 <div id="wrapper">
@@ -21,26 +29,27 @@ require "../includes/head.php";
             <div class="row">
                 <section class="content__left col-md-8">
                     <div class="block">
-                        <h3>Результат поиска:</h3>
+                        <h3>Результат поиска по запросу "<?php echo @$query?>" :</h3>
                         <div class="block__content">
                             <div class="articles articles__horizontal">
 
                                 <?php
-                                $post_query=$_POST['query'];
+
                                 if (!empty($post_query)) {
 
-                                    $query = trim($post_query);
+
 
 
 
                                     $articles=mysqli_query($connection, "SELECT * FROM articles WHERE title LIKE '%$query%'
                                           OR text LIKE '%$query%' ORDER BY id DESC");
 
-                                    var_dump($articles);
 
                                     if (mysqli_num_rows($articles)<=0)
                                     {
-                                        echo 'Нет статей из выбранной категории';
+                                        echo ' <div class="full-text text_simple_article">
+                                                 Нет статей по данному запросу
+                                            </div>';
                                     }
 
 
@@ -50,7 +59,7 @@ require "../includes/head.php";
                                             <div class="article__image"
                                                  style="background-image: url(../static/images/<?php echo $art['image']; ?>);"></div>
                                             <div class="article__info">
-                                                <a href="../pages/article.php?id=<?php echo $art['id']; ?>"><?php echo $art['title'];?></a>
+                                                <h3><a href="../pages/article.php?id=<?php echo $art['id']; ?>"><?php echo $art['title'];?></a></h3>
                                                 <div class="article__info__meta">
                                                     <?php
                                                     $art_cat=false;
