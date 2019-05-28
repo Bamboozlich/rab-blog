@@ -25,12 +25,12 @@ $admin=mysqli_query($connection,"SELECT blog_name,vk_url FROM admins  WHERE logi
 
 $adm = mysqli_fetch_assoc($admin);
 
-$new_title = array(
+$config_edit = array(
     'title' => $adm['blog_name'],
     'vk_url' => $adm['vk_url'],
 );
 
-$config = array_merge($config, $new_title);
+$config = array_merge($config, $config_edit);
 
 ?>
 
